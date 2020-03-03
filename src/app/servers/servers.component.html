@@ -1,3 +1,16 @@
 <p>servers works!</p>
-<app-server></app-server>
-<app-server></app-server>
+
+
+<div> 
+    <!-- to be able to sue string interpolation the content inside {{ }} has to return string in the end -->
+    <p> Server with ID {{ serverId }} is {{ getServerStatus() }} </p>
+</div>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-sx-12">
+            <app-server></app-server>
+            <app-server></app-server>
+        </div>
+    </div>
+</div> -->
