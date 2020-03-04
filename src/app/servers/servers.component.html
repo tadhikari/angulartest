@@ -6,12 +6,18 @@
     <p> Server with ID {{ serverId }} is {{ getServerStatus() }} </p>
 </div>
 
+
+
+
 <div class="container">
     <div class="row">
         <div class="col-sx-12">
-            <button class="btn btn-primary" [disabled]="!allowNewServer">Add Servers</button><br>
-        {{allowNewServer}}<br>
-
+            <label>Server Name</label>
+            <input type="text" class="form-control" (input)="onUpdateServerName($event)">
+            <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Servers</button><br>
+        <br>
+        {{ serverName }}<br>
+        <p>{{ serverCreationStatus }}</p><br>
 
             <app-server></app-server>
             <app-server></app-server>
