@@ -6,11 +6,16 @@
     <p> Server with ID {{ serverId }} is {{ getServerStatus() }} </p>
 </div>
 
-<!-- <div class="container">
+<div class="container">
     <div class="row">
         <div class="col-sx-12">
+            <button class="btn btn-primary" [disabled]="!allowNewServer">Add Servers</button><br>
+        {{allowNewServer}}<br>
+
+
             <app-server></app-server>
             <app-server></app-server>
         </div>
     </div>
-</div> -->
+</div>
+
