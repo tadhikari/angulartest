@@ -7,21 +7,23 @@
 </div>
 
 
-
-
 <div class="container">
     <div class="row">
         <div class="col-sx-12">
             <label>Server Name</label>
-            <input type="text" class="form-control" (input)="onUpdateServerName($event)">
+            <!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+            <input type="text" class="form-control" [(ngModel)]="serverName">
             <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Servers</button><br>
         <br>
-        {{ serverName }}<br>
-        <p>{{ serverCreationStatus }}</p><br>
-
+        <!-- {{ serverName }}<br> -->
+        <!-- <p>{{ serverCreationStatus }}</p><br> -->
+            <p *ngIf="serverCreated; else noServer"> Server was created, server with name {{ serverName }}</p>
+            <ng-template #noServer> 
+                <p>No server was created </p>
+            </ng-template>
+            <!-- for ngif the return statement has to be true or false -->
             <app-server></app-server>
             <app-server></app-server>
         </div>
     </div>
 </div>
-
